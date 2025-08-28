@@ -206,6 +206,17 @@ function resetApp() {
     location.reload();
 }
 
+function validateForm() {
+    const nameInput = document.getElementById('nameInput');
+    const submitBtn = document.getElementById('nameSubmitBtn');
+    
+    if (nameInput.value.trim() === '') {
+        submitBtn.disabled = true;
+    } else {
+        submitBtn.disabled = false;
+    }
+}
+
 // Add reset button functionality (optional)
 document.addEventListener('keydown', function(e) {
     if (e.ctrlKey && e.shiftKey && e.key === 'R') {
