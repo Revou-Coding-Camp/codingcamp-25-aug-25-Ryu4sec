@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tugas Mini Project</title>
+  <link rel="stylesheet" href="./CSS/styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">🌐</div>
+    <nav>
+      <ul>
+        <li><a href="#">Beranda</a></li>
+        <li><a href="#">Profil</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Pesan</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Hallo Admin RevoU, Selamat Datang</h1>
+    <p>Ini portfolio pertama saya</p>
+    <div class="image-placeholder"></div>
+  </section>
+
+  <section class="headquarter">
+    <h2>Our Headquarter</h2>
+    <div class="hq-list">
+      <div class="hq-item">
+        <div class="circle"></div>
+        <p>Jakarta</p>
+      </div>
+      <div class="hq-item">
+        <div class="circle"></div>
+        <p>Bandung</p>
+      </div>
+      <div class="hq-item">
+        <div class="circle"></div>
+        <p>Surabaya</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="message">
+    <form id="contactForm">
+      <input type="text" id="nama" placeholder="Nama" required>
+      <input type="date" id="tanggalLahir" placeholder="Tanggal Lahir" required>
+      <select id="gender" required>
+        <option value="">Pilih Gender</option>
+        <option value="Laki-Laki">Laki-Laki</option>
+        <option value="Perempuan">Perempuan</option>
+      </select>
+      <textarea id="pesan" placeholder="Pesan" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+
+    <div class="info-box" id="infoBox">
+      <p><b>Current time:</b> <span id="currentTime"></span></p>
+      <p><b>Name:</b> <span id="displayName">Ardian Putra Samadara</span></p>
+      <p><b>Gender:</b> <span id="displayGender">Laki-laki</span></p>
+      <p><b>Birth Date:</b> <span id="displayBirthDate">25/08/2012</span></p>
+      <p><b>Message:</b> <span id="displayMessage">Lagi Belajar Bikin Website</span></p>
+    </div>
+  </section>
+
+  <footer>
+    Created by Ardian, Separuh Ai Sihh
+  </footer>
+
+  <script src="./JS/script.js"></script>
+</body>
+</html>
