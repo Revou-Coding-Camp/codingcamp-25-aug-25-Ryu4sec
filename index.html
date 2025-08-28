@@ -7,67 +7,91 @@
   <link rel="stylesheet" href="./CSS/styles.css">
 </head>
 <body>
-  <header>
-    <div class="logo">🌐</div>
-    <nav>
-      <ul>
-        <li><a href="#">Beranda</a></li>
-        <li><a href="#">Profil</a></li>
-        <li><a href="#">Portfolio</a></li>
-        <li><a href="#">Pesan</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <h1>Hallo Admin RevoU, Selamat Datang</h1>
-    <p>Ini portfolio pertama saya</p>
-    <div class="image-placeholder"></div>
-  </section>
-
-  <section class="headquarter">
-    <h2>Our Headquarter</h2>
-    <div class="hq-list">
-      <div class="hq-item">
-        <div class="circle"></div>
-        <p>Jakarta</p>
-      </div>
-      <div class="hq-item">
-        <div class="circle"></div>
-        <p>Bandung</p>
-      </div>
-      <div class="hq-item">
-        <div class="circle"></div>
-        <p>Surabaya</p>
-      </div>
+  <!-- Name Modal -->
+  <div id="nameModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
+    <div style="background: white; padding: 30px; border-radius: 10px; text-align: center; max-width: 400px; width: 90%;">
+      <h2 style="margin-bottom: 20px; color: #2c3e50;">Selamat Datang!</h2>
+      <p style="margin-bottom: 20px; color: #666;">Silakan masukkan nama Anda untuk melanjutkan</p>
+      <form id="nameForm">
+        <input type="text" id="nameInput" placeholder="Masukkan nama Anda..." style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px;">
+        <button type="submit" id="nameSubmitBtn" disabled style="width: 100%; padding: 12px; background: #333; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 14px;">Masuk</button>
+      </form>
     </div>
-  </section>
+  </div>
 
-  <section class="message">
-    <form id="contactForm">
-      <input type="text" id="nama" placeholder="Nama" required>
-      <input type="date" id="tanggalLahir" placeholder="Tanggal Lahir" required>
-      <select id="gender" required>
-        <option value="">Pilih Gender</option>
-        <option value="Laki-Laki">Laki-Laki</option>
-        <option value="Perempuan">Perempuan</option>
-      </select>
-      <textarea id="pesan" placeholder="Pesan" required></textarea>
-      <button type="submit">Submit</button>
-    </form>
+  <!-- Main Content -->
+  <div id="mainContent">
+    <header>
+      <div class="logo">🌐</div>
+      <nav>
+        <ul>
+          <li><a href="#" data-section="hero">Beranda</a></li>
+          <li><a href="#" data-section="headquarter">Profil</a></li>
+          <li><a href="#" data-section="message">Portfolio</a></li>
+          <li><a href="#" data-section="message">Pesan</a></li>
+        </ul>
+      </nav>
+    </header>
 
-    <div class="info-box" id="infoBox">
-      <p><b>Current time:</b> <span id="currentTime"></span></p>
-      <p><b>Name:</b> <span id="displayName">Ardian Putra Samadara</span></p>
-      <p><b>Gender:</b> <span id="displayGender">Laki-laki</span></p>
-      <p><b>Birth Date:</b> <span id="displayBirthDate">25/08/2012</span></p>
-      <p><b>Message:</b> <span id="displayMessage">Lagi Belajar Bikin Website</span></p>
-    </div>
-  </section>
+    <section class="hero" id="hero">
+      <div class="greeting-time" id="greetingTime"></div>
+      <h1 id="welcomeMessage">Hallo Admin RevoU, Selamat Datang</h1>
+      <p>Ini portfolio pertama saya</p>
+      <div class="image-placeholder">Gambar Portfolio</div>
+    </section>
 
-  <footer>
-    Created by Ardian, Separuh Ai Sihh
-  </footer>
+    <section class="headquarter" id="headquarter">
+      <h2>Our Headquarter</h2>
+      <div class="hq-list">
+        <div class="hq-item">
+          <div class="circle" data-hq="Jakarta" data-info="Kantor pusat dengan fasilitas lengkap dan tim terbaik">🏢</div>
+          <p>Jakarta</p>
+        </div>
+        <div class="hq-item">
+          <div class="circle" data-hq="Bandung" data-info="Kantor cabang dengan fokus pada teknologi dan inovasi">🏗️</div>
+          <p>Bandung</p>
+        </div>
+        <div class="hq-item">
+          <div class="circle" data-hq="Surabaya" data-info="Kantor regional dengan layanan customer service 24/7">🏪</div>
+          <p>Surabaya</p>
+        </div>
+      </div>
+      <div class="hq-info" id="hqInfo">
+        <p id="hqInfoText"></p>
+      </div>
+    </section>
+
+    <section class="message" id="message">
+      <form id="contactForm">
+        <h3>Kirim Pesan</h3>
+        <input type="text" id="nama" placeholder="Nama" required>
+        <input type="date" id="tanggalLahir" placeholder="Tanggal Lahir" required>
+        <select id="gender" required>
+          <option value="">Pilih Gender</option>
+          <option value="Laki-Laki">Laki-Laki</option>
+          <option value="Perempuan">Perempuan</option>
+        </select>
+        <textarea id="pesan" placeholder="Pesan" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+
+      <div class="info-box" id="infoBox">
+        <h3>Informasi Terkini</h3>
+        <p><b>Current time:</b> <span id="currentTime"></span></p>
+        <p><b>Name:</b> <span id="displayName">Ardian Putra Samadara</span></p>
+        <p><b>Gender:</b> <span id="displayGender">Laki-laki</span></p>
+        <p><b>Birth Date:</b> <span id="displayBirthDate">25/08/2012</span></p>
+        <p><b>Message:</b> <span id="displayMessage">Lagi Belajar Bikin Website</span></p>
+      </div>
+    </section>
+
+    <footer>
+      Created by Ardian, Separuh Ai Sihh
+    </footer>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast"></div>
 
   <script src="./JS/script.js"></script>
 </body>
